@@ -1,0 +1,50 @@
+$verde_claro: #00bf8f;
+$verde_escuro: #001510;
+
+footer{
+  height: 200px;
+  width: 100%;
+  z-index: 99;
+  text-align: center;
+  min-width: 200px;
+
+  .media{
+    width: 20%;
+    height: 40%;
+
+    .icon{
+      width: 25%;
+      height: 100%;
+      float: left;
+      text-align: center;
+
+      img{
+        background-color: transparent;
+        height: 50%;
+        margin-top: 25%;
+        cursor: pointer;
+      }
+    }
+  }
+
+  p{
+    color: #fff;
+    margin-top: 3em;
+
+    span{
+      color: $verde_claro;
+    }
+  }
+}
+
+@media (max-width: 650px){
+  footer{
+    .media{
+      width: 100%;
+    }
+
+    span{
+      margin-top: 5em;
+    }
+  }
+}

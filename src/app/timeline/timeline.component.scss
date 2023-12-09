@@ -1,0 +1,20 @@
+*{
+    z-index: 1000 !important;
+}
+.container{
+    width: 60%;  
+    margin-bottom: 10em;    
+    position: relative;
+    background-color: #121212;
+    z-index: 100;    
+    
+    h1{
+        background-color: transparent;
+        color: rgba(114, 114, 114, 0.9);
+        text-align: center;
+    }
+
+    .card{
+        margin-top: 3em;
+    }
+}

@@ -1,14 +1,38 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'portifolio';
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    this.dockItems = [
+      {
+          label: 'linkedln',
+          icon: "../assets/img/linkedin.png"
+      },
+      {
+          label: 'github',
+          icon: "../assets/img/github.png"
+      },
+      {
+          label: 'traduçao',
+          icon: "../assets/img/global.png"
+      },
+      {
+          label: 'curriculum',
+          icon: "../assets/img/curriculum-vitae.png"
+      }
+  ];
+  }
+  title = 'Portifolio';
+  dockItems!: MenuItem[];
+
+  public teste(){
+    console.log("teste");
+    
+  }
+
 }

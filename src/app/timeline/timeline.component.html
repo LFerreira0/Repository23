@@ -1,0 +1,25 @@
+
+<div class="container" id="timeline">
+    <br><br><br><br><br><br><br>
+    <h1>Conheça minha trajetória</h1>
+    <br><br>
+    <div class="card">
+        <p-timeline [value]="events" align="alternate" styleClass="customized-timeline" >
+            
+            <ng-template pTemplate="marker" let-event>
+                <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+                    <i style="padding: 1em; border-radius: 5px;" [ngClass]="event.icon"></i>
+                </span>
+            </ng-template>
+            <ng-template pTemplate="content" let-event>
+                <p-card [header]="event.status" [subheader]="event.date" >
+                    <img *ngIf="event.image" [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + event.image" [alt]="event.name" width="200" class="shadow-2" />
+                    <p style="margin-top: 1em;" *ngFor="let textos of event.content">
+                        {{textos}}
+                    </p>                    
+                </p-card>
+                <br>
+            </ng-template>
+        </p-timeline>
+    </div>
+</div>
