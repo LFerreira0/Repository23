@@ -1,31 +1,21 @@
-
-
 <header>
-  <div class="logo">
+  <div class="logo" id="logo">
     <img src="../../assets/img/brackets.png" alt="logo" height="50">
     <div class="label">
-      <h1>LCF</h1>      
-        <ngx-typed-js 
-        [strings]="['LCF', 'LCF', 'LCF', 'LCFerreira', 'LCFrontend']" 
-        [loop]="true" [typeSpeed]="200" 
-        [startDelay]="200" 
-        [backSpeed]="100" 
-        [backDelay]="500" 
-        [showCursor]="false"
-        [smartBackspace]="true"
-        >
+      <h1>LCF</h1>
+      <ngx-typed-js [strings]="['LCF', 'LCF', 'LCF', 'LCFerreira', 'LCFrontEnd']" [loop]="true" [typeSpeed]="200" [startDelay]="200" [backSpeed]="100" [backDelay]="500" [showCursor]="false" [smartBackspace]="true">
         <h1 class="typing"></h1>
-        </ngx-typed-js>
-      </div>
-    
+      </ngx-typed-js>
+    </div>
+
   </div>
-  <button  id="btn-mobile" (click)="toggle()">Menu
+  <button id="btn-mobile" (click)="toggle()">Menu
     <span [ngStyle]="hamburguer" id="hamburguer"></span>
   </button>
   <nav [ngStyle]="estilo" id="estilo">
     <ul id="menu">
-      <li><a href="#">Home</a>            
-      <li><a href="#projetos">Experiências</a></li>
+      <li><a href="#">Home</a>
+      <li><a href="#timeline">Experiências</a></li>
       <li><a href="#contato">Contatos</a></li>
     </ul>
   </nav>

@@ -1,12 +1,17 @@
 $verde_claro: #00bf8f;
 $verde_escuro: #001510;
 
+.inView{
+  color: red !important;
+}
+
 section {
   height: calc(103vh);
   width: 100%;
   display: flex;
   margin-top: 60px;
   z-index: -1;
+  background-color: #1E1E1E;
 
   .conteudo{
     width: 60%;
@@ -37,6 +42,11 @@ section {
         font-size: 1.1rem;
       }
 
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
+
       span{
         color: #fff;        
       }
@@ -44,17 +54,44 @@ section {
       span:hover{
         color: $verde_claro;
       }
-      .oportunidade:first-child{
-        margin-top: 8rem;
+
+      h4{
+        color: #8E9DB2;
+        margin-top: 2rem;
+        margin-bottom: -5rem !important;
       }
+
+      hr{
+        width: 70%;
+        margin: 0 auto;
+        height: 1px;
+        border-color: #8E9DB2;
+        margin-bottom: 2rem;
+      }
+      
+
       .oportunidade{
-        width: 100%;
-        margin-top: em;        
+        width: 100%;  
         display: flex; 
         border-radius: 5px;
         cursor: pointer;     
-        position: relative;   
-        
+        position: relative; 
+        flex-wrap: wrap;  
+        transition: 1s;        
+        span{
+          position: absolute;
+          right: 15px;
+          top: 15px;
+        }
+        a{
+          color: #fff;
+          text-decoration: none;
+          font-size: .9rem;
+          color: #00bf8f;
+          margin-left: .5rem;
+          font-weight: bold;
+        }
+       
         .date{
           margin-left: 0;          
           width: 22%;
@@ -68,8 +105,8 @@ section {
         .description{
           width: 78%;
           padding-top: .8rem;          
-          margin-left: 0px;
-          margin-bottom: 5em;          
+          margin-left: 0px; 
+          margin-right: 2em;        
           
           h1{
             font-size: 1rem;
@@ -82,31 +119,32 @@ section {
           }
         }
 
-        .stacks{
-          position: absolute;
-          bottom: 0;
-          margin-bottom: 1em;
-          margin-top: 2e,;
-          
+        .stacks{      
           ul{
-            list-style: none;
-            margin-left: 30%;            
-            border-radius: 50px;                     
-            
+            list-style: none; 
+            margin-bottom: 1em;
             li{
               display: inline;                            
               background-color: hsl(165, 100%, 37%, 0.3);              
               border-radius: 15px;
-              margin-right: 1em; 
               padding: .3em 1em;      
               color: #00bf8f;   
               font-weight: bold;  
-              font-size: .7rem;                
-            }                      
+              font-size: .7rem;       
+              margin-right: 1em;
+            }   
           }        
         }
       }
 
+      .projetos{
+        width: 100%;
+        margin-top: 1em;        
+        display: flex; 
+        border-radius: 5px;
+        cursor: pointer;     
+        position: relative;  
+      }
       .oportunidade:hover{
         background-color: hsla(0, 0%, 0%, 0.2);
       }
@@ -173,7 +211,8 @@ section {
         .itens:first-child:hover{
           .barra{
             background-color: #fff;
-            width: 50px;
+            width: 90px;
+            height: 3px;
           }
           .label{
             color: #fff;
@@ -184,7 +223,8 @@ section {
         .itens:nth-child(2):hover{
           .barra{
             background-color: #fff;
-            width: 50px;
+            width: 90px;
+            height: 3px;
           }
           .label{
             color: #fff;
@@ -195,7 +235,8 @@ section {
         .itens:nth-child(3):hover{
           .barra{
             background-color: #fff;
-            width: 50px;
+            width: 90px;
+            height: 3px;
           }
           .label{
             color: #fff;
@@ -261,3 +302,65 @@ section {
   }
 }
 
+
+@media (max-width: 650px){
+
+  #hero{
+    
+  }
+
+  .conteudo{
+    flex-direction: column;
+    width: 100% !important;
+    .textos{
+      position: static !important;
+      
+      .menus{
+        display: none;
+      }
+    }
+
+    .content{
+      width: 100% !important;
+      .about{
+          width: 90%;
+          word-wrap: break-word;
+
+
+        
+      }
+      
+      .experience{
+        .oportunidade{
+          .stacks{
+            width: 100%;
+            ul{
+              margin-left: 3rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+.scroll{
+  position: fixed;
+  right: 1rem;
+  top: 90%;
+  cursor: pointer;
+  text-align: center;
+  
+
+  img{
+    width: 70%;
+  }
+}
+
+.scroll:hover{
+  background-color: hsla(0, 0%, 0%, 0.8);
+}

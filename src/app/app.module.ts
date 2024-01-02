@@ -10,17 +10,14 @@ import { PortifolioComponent } from './portifolio/portifolio.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContatoComponent } from './contato/contato.component';
 import { NgxTypedJsModule } from 'ngx-typed-js'
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimelineComponent } from './timeline/timeline.component';
 import { TimelineModule } from 'primeng/timeline';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import {DockModule} from 'primeng/dock';
-
-
-
-
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +29,6 @@ import {DockModule} from 'primeng/dock';
     FooterComponent,
     ContatoComponent,
     TimelineComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -43,8 +39,9 @@ import {DockModule} from 'primeng/dock';
     TimelineModule,
     CardModule,
     ButtonModule,
-    DockModule
-    
+    DockModule,
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

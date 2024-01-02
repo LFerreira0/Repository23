@@ -1,11 +1,9 @@
-*{
-    z-index: 1000 !important;
-}
+
 .container{
     width: 60%;  
     margin-bottom: 10em;    
     position: relative;
-    background-color: #121212;
+    background-color: #1E1E1E;
     z-index: 100;    
     
     h1{
@@ -16,5 +14,11 @@
 
     .card{
         margin-top: 3em;
+    }
+}
+
+@media (max-width: 650px){
+    .container{
+        margin-top: -5rem;
     }
 }

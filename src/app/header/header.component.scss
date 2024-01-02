@@ -7,7 +7,7 @@ header{
   position: fixed;
   z-index: 1000;
   top: 0; 
-  background-color: #121212;
+  background-color: #1E1E1E;
 
   .logo{
     width: 20%;
@@ -85,7 +85,7 @@ header{
       display: flex;
       height: 80%;
       float: right;
-      margin-right: 0px !important;
+      margin-right: 3rem !important;
       background-color: transparent;
 
       li{
