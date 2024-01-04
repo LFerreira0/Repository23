@@ -90,14 +90,14 @@
           <div class="oportunidade">
             <span>&#x2197;</span>
             <div class="date">
-              <p>{{this.projetos[2].updated_at | date: 'MM/yyyy'}}</p>
+              <p>{{this.projetos[2]!.updated_at | date: 'MM/yyyy'}}</p>
             </div>
             <div class="description">
-              <h1>{{this.projetos[2].name}}</h1>
-              <p>{{this.projetos[2].description}}</p>
+              <h1>{{this.projetos[2]!.name}}</h1>
+              <p>{{this.projetos[2]!.description}}</p>
               <div class="stacks">
                 <ul>
-                  <li>{{this.projetos[2].language}}</li>
+                  <li>{{this.projetos[2]!.language}}</li>
                   <li>HTML</li>
                   <li>JS</li>
                   <li>TS</li>

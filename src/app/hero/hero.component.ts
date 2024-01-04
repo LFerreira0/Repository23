@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
-import { GitService } from '../services/git.service';
+import { GitService } from '../shared/services/git.service';
+import { IGit } from '../shared/interfaces/git-interface';
 
 @Component({
   selector: 'app-hero',
@@ -10,7 +9,7 @@ import { GitService } from '../services/git.service';
 })
 export class HeroComponent implements OnInit {
   inView!: string;
-  projetos: any;
+  projetos!: IGit[];
   constructor(
     private gitService: GitService
   ) { }
@@ -35,7 +34,7 @@ export class HeroComponent implements OnInit {
   public getAllProjects(): void{
     this.gitService.getAllProjects().subscribe((projetos) => {
       (this.projetos = projetos)
-      console.log(this.projetos)
+      
     });
   }
 

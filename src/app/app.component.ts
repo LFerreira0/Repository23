@@ -29,10 +29,4 @@ export class AppComponent implements OnInit {
   }
   title = 'Portifolio';
   dockItems!: MenuItem[];
-
-  public teste(){
-    console.log("teste");
-    
-  }
-
 }

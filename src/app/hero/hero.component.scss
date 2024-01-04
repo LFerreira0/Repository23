@@ -1,6 +1,11 @@
 $verde_claro: #00bf8f;
 $verde_escuro: #001510;
 
+@keyframes fade-in{
+  from {transform: translateX(100%); opacity: 0;}
+  to {transform: translateY(1); opacity: 1;}
+}
+
 .inView{
   color: red !important;
 }
@@ -66,7 +71,7 @@ section {
         margin: 0 auto;
         height: 1px;
         border-color: #8E9DB2;
-        margin-bottom: 2rem;
+        margin-bottom: 2rem;        
       }
       
 
@@ -76,8 +81,9 @@ section {
         border-radius: 5px;
         cursor: pointer;     
         position: relative; 
-        flex-wrap: wrap;  
-        transition: 1s;        
+        flex-wrap: wrap;                       
+
+
         span{
           position: absolute;
           right: 15px;
