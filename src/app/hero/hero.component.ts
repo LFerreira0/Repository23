@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { IRepository } from '../shared/interfaces/git-interface';
 import { GitService } from '../shared/services/git.service';
-import { IGit } from '../shared/interfaces/git-interface';
 
 @Component({
   selector: 'app-hero',
@@ -9,9 +10,14 @@ import { IGit } from '../shared/interfaces/git-interface';
 })
 export class HeroComponent implements OnInit {
   inView!: string;
-  projetos!: IGit[];
+  isTestDivScrolledIntoView!: boolean;
+  projetos!: IRepository[];
+  teste = {
+    element: ViewChild('about')
+  }
   constructor(
-    private gitService: GitService
+    private gitService: GitService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -19,23 +25,29 @@ export class HeroComponent implements OnInit {
   }
 
   @ViewChild('about', {static: false}) private about!: ElementRef<HTMLDivElement>;
-  isTestDivScrolledIntoView!: boolean;
+  @ViewChild('trabalhos', {static: false})private trabalhos!: HTMLElement;
+  @ViewChild('conteudo') private content!: ElementRef<HTMLDivElement>;
 
   @HostListener('window:scroll', ['$event'])
-  isScrolledIntoView(){
-    if (this.about){
-      const rect = this.about.nativeElement.getBoundingClientRect();
-      const topShown = rect.top >= 0;
-      const bottomShown = rect.bottom <= window.innerHeight;
-      this.isTestDivScrolledIntoView = topShown && bottomShown;
+  isInViewPort(){
+    if (this.about && this.trabalhos){
+     
     }
   }
-
   public getAllProjects(): void{
     this.gitService.getAllProjects().subscribe((projetos) => {
-      (this.projetos = projetos)
-      
+      (this.projetos = projetos.filter(({name}) => {
+        return name.includes("HL")
+      }))
     });
   }
 
+  public scroll(el:HTMLElement){
+    this.content.nativeElement.scrollTo(0, el.offsetTop);
+    window.scrollTo(0,0);
+
+    if(this.trabalhos.offsetTop >= 18){
+      
+    }
+  }
 }

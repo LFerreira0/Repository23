@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IRepository } from '../interfaces/git-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class GitService {
   constructor(    private http: HttpClient
     ) { }
 
-  public getAllProjects(): Observable<[]>{
-    return this.http.get<[]>(this.baseURL);
+  public getAllProjects(): Observable<IRepository[]>{
+    return this.http.get<IRepository[]>(this.baseURL);
   }
 }

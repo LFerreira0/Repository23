@@ -6,29 +6,29 @@
       <p>Sou apaixonado por desenvolver soluções digitais <br> acessíveis e responsivas.</p>
 
       <div class="menus">
-        <div class="itens">
+        <div class="itens" (click)="scroll(about)">
           <div class="barra"></div>
           <div class="label">SOBRE</div>
         </div>
-        <div class="itens">
+        <div class="itens" (click)="scroll(trabalhos)">
           <div class="barra"></div>
           <div class="label">EXPERIÊNCIAS</div>
         </div>
-        <div class="itens">
+        <div class="itens" (click)="scroll(projects)">
           <div class="barra"></div>
           <div class="label">PROJETOS</div>
         </div>
       </div>
     </div>
 
-    <div class="content">
+    <div class="content" #conteudo>
       <div class="about" #about>
         <p>Um desenvolvedor Front End apaixonado por construir interfaces de usuário eficientes e atraentes. Com aproximadamente 3 anos de experiência em <span>HTML, CSS e JavaScript</span>, me especializei em frameworks modernos, como Angular e React.</p>
         <p>Tenho um forte foco em design <span>responsivo e acessibilidade</span>, visando entregar experiências de alta qualidade em qualquer dispositivo</p>
         <p>Além disso, estou constantemente buscando aprimorar meu conhecimento em tecnologias emergentes e em melhores práticas de UX/UI. <span>Com habilidades de comunicação sólidas e trabalho em equipe</span>, estou sempre aberto a desafios e novos projetos. É um prazer ter você aqui em meu portfólio.</p>
       </div>
       <div class="experience">
-        <div class="oportunidade">
+        <div class="oportunidade" #trabalhos>
           <div class="date">
             <p>2022 - ATUAL</p>
           </div>
@@ -86,125 +86,36 @@
           </div>
 
         </div>
-        <a href="https://github.com/LFerreira0/Criativa" target="_blank">
-          <div class="oportunidade">
-            <span>&#x2197;</span>
-            <div class="date">
-              <p>{{this.projetos[2]!.updated_at | date: 'MM/yyyy'}}</p>
-            </div>
-            <div class="description">
-              <h1>{{this.projetos[2]!.name}}</h1>
-              <p>{{this.projetos[2]!.description}}</p>
-              <div class="stacks">
-                <ul>
-                  <li>{{this.projetos[2]!.language}}</li>
-                  <li>HTML</li>
-                  <li>JS</li>
-                  <li>TS</li>
-                  <br><br>
-                  <li>Angular</li>
-                  <li>Git</li>
-                </ul>
+        <div #projects>
+          <ng-container *ngFor="let project of projetos">
+            <a [href]="project.url" target="_blank">
+              <div class="oportunidade">
+                <span>&#x2197;</span>
+                <div class="date">
+                  <p>{{project.updated_at | date: 'MM/yyyy'}}</p>
+                </div>
+                <div class="description">
+                  <h1>{{project.name}}</h1>
+                  <p>{{project.description}}</p>
+                  <div class="stacks">
+                    <ul>
+                      <li>{{project.language}}</li>
+                      <li>HTML</li>
+                      <li>SCSS</li>
+                      <li>Git</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <br>
-            </div>
-          </div>
-        </a>
-        <a href="https://github.com/LFerreira0/Holistic" target="_blank">
-          <div class="oportunidade">
-            <span>&#x2197;</span>
-            <div class="date">
-              <p>{{this.projetos[7].updated_at | date: 'MM/yyyy'}}</p>
-            </div>
-            <div class="description">
-              <h1>{{this.projetos[7].name}}</h1>
-              <p>{{this.projetos[7].description}}</p>
-              <div class="stacks">
-                <ul>
-                  <li>{{this.projetos[7].language}}</li>
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>Git</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="https://github.com/LFerreira0/Portifolio" target="_blank">
-          <div class="oportunidade">
-            <span>&#x2197;</span>
-            <div class="date">
-              <p>{{this.projetos[16].updated_at | date: 'MM/yyyy'}}</p>
-            </div>
-            <div class="description">
-              <h1>{{this.projetos[16].name}}</h1>
-              <p>{{this.projetos[16].description}}</p>
-              <div class="stacks">
-                <ul>
-                  <li>{{this.projetos[16].language}}</li>
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <br><br>
-                  <li>Git</li>
-                  <li>Angular</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="https://github.com/LFerreira0/WorkSpace" target="_blank">
-          <div class="oportunidade">
-            <span>&#x2197;</span>
-            <div class="date">
-              <p>{{this.projetos[24].updated_at | date: 'MM/yyyy'}}</p>
-            </div>
-            <div class="description">
-              <h1>{{this.projetos[24].name}}</h1>
-              <p>{{this.projetos[24].description}}</p>
-              <div class="stacks">
-                <ul>
-                  <li>{{this.projetos[24].language}}</li>
-                  <li>JavaScript</li>
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <br><br>
-                  <li>RxJS</li>
-                  <li>Git</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="https://github.com/LFerreira0/MeBank" target="_blank">
-          <div class="oportunidade">
-            <span>&#x2197;</span>
-            <div class="date">
-              <p>{{this.projetos[9].updated_at | date: 'MM/yyyy'}}</p>
-            </div>
-            <div class="description">
-              <h1>{{this.projetos[9].name}}</h1>
-              <p>{{this.projetos[9].description}}</p>
-              <div class="stacks">
-                <ul>
-                  <li>{{this.projetos[9].language}}</li>
-                  <li>HTML</li>
-                  <li>SCSS</li>
-                  <li>Angular</li>
-                  <br>
-                  <br>
-                  <li>JS</li>
-                  <li>C#</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </a>
+            </a>
+          </ng-container>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<div class="scroll">
-  <a href="#conteudo"><img src="../../assets/img/up-arrow.png" alt=""></a>
+<div class="scroll" (click)="scroll(about)">
+  <img src="../../assets/img/up-arrow.png" alt="">
 </div>
