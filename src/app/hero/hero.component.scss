@@ -6,8 +6,15 @@ $verde_escuro: #001510;
   to {transform: translateY(1); opacity: 1;}
 }
 
-.inView{
-  color: red !important;
+.focus{
+  width: 100px!important;
+  height: 3px !important;
+  background-color: #fff !important;
+}
+
+.focusLabel{
+  color: #fff !important;
+  font-weight: bold;
 }
 
 section {

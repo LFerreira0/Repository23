@@ -6,22 +6,22 @@
       <p>Sou apaixonado por desenvolver soluções digitais <br> acessíveis e responsivas.</p>
 
       <div class="menus">
-        <div class="itens" (click)="scroll(about)">
-          <div class="barra"></div>
-          <div class="label">SOBRE</div>
+        <div class="itens" (click)="scroll(about)" >
+          <div class="barra" id="aboutBar"></div>
+          <div class="label" id="aboutLabel">SOBRE</div>
         </div>
         <div class="itens" (click)="scroll(trabalhos)">
-          <div class="barra"></div>
-          <div class="label">EXPERIÊNCIAS</div>
+          <div class="barra" id="workBar"></div>
+          <div class="label" id="workLabel">EXPERIÊNCIAS</div>
         </div>
         <div class="itens" (click)="scroll(projects)">
-          <div class="barra"></div>
-          <div class="label">PROJETOS</div>
+          <div class="barra" id="projectsBar"></div>
+          <div class="label" id="labelsBar">PROJETOS</div>
         </div>
       </div>
     </div>
 
-    <div class="content" #conteudo>
+    <div class="content"  #conteudo>
       <div class="about" #about>
         <p>Um desenvolvedor Front End apaixonado por construir interfaces de usuário eficientes e atraentes. Com aproximadamente 3 anos de experiência em <span>HTML, CSS e JavaScript</span>, me especializei em frameworks modernos, como Angular e React.</p>
         <p>Tenho um forte foco em design <span>responsivo e acessibilidade</span>, visando entregar experiências de alta qualidade em qualquer dispositivo</p>
@@ -89,7 +89,7 @@
         <div #projects>
           <ng-container *ngFor="let project of projetos">
             <a [href]="project.url" target="_blank">
-              <div class="oportunidade">
+              <div class="oportunidade" id="projects">
                 <span>&#x2197;</span>
                 <div class="date">
                   <p>{{project.updated_at | date: 'MM/yyyy'}}</p>
