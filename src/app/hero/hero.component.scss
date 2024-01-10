@@ -29,8 +29,7 @@ section {
     width: 60%;
     margin: 0 auto;    
     color: #fff;
-    margin-top: 2vh;
-     
+    margin-top: 2vh;     
     display: flex;
     justify-content: space-between;     
     
@@ -206,8 +205,7 @@ section {
           display: flex;
           align-items: center;
           gap: 1em;
-          cursor: pointer;
-          
+          cursor: pointer;          
 
           .barra{                      
             background-color: #8E9DB2;
@@ -262,20 +260,12 @@ section {
             font-weight: 500;
           }
         }
-
       }
-
     }
-
-
-
     h1{      
       padding: 0 .5em 0 .5em;      
       margin-left: 0px;
     }
-
-
-
 
     span{
       color: $verde_claro;
@@ -321,52 +311,6 @@ section {
   }
 }
 
-
-@media (max-width: 650px){
-
-  #hero{
-    
-  }
-
-  .conteudo{
-    flex-direction: column;
-    width: 100% !important;
-    .textos{
-      position: static !important;
-      
-      .menus{
-        display: none;
-      }
-    }
-
-    .content{
-      width: 100% !important;
-      .about{
-          width: 90%;
-          word-wrap: break-word;
-
-
-        
-      }
-      
-      .experience{
-        .oportunidade{
-          .stacks{
-            width: 100%;
-            ul{
-              margin-left: 3rem !important;
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-}
-
-
-
 .scroll{
   position: fixed;
   right: 1rem;
@@ -374,7 +318,6 @@ section {
   cursor: pointer;
   text-align: center;
   
-
   img{
     width: 70%;
   }
@@ -383,3 +326,37 @@ section {
 .scroll:hover{
   background-color: hsla(0, 0%, 0%, 0.8);
 }
+
+
+
+
+@media (max-width: 650px){
+  section{
+    .conteudo{      
+      width: 100% !important;
+      flex-direction: column;            
+      .textos{
+        width: 90%;
+        position: static !important;
+        
+        z-index: 1;
+        .menus{
+          display: none;
+        }
+      }
+
+      .content{        
+        width: calc(100% - 1em);
+        margin-left: 1em;
+        overflow: auto;             
+        z-index: 10;
+
+      }
+    }
+  }
+
+  .scroll{
+    display: none;
+  }
+}
+
