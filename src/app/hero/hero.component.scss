@@ -32,9 +32,7 @@ section {
     margin-top: 2vh;     
     display: flex;
     justify-content: space-between;     
-    
-    
-    
+        
     .content{
       width: 50%;  
       margin-right: 0px;   
@@ -167,7 +165,6 @@ section {
     .textos{      
       margin-left: 1em;
       width: 50%;          
-    
       z-index: 50;      
 
       h1{
@@ -336,8 +333,7 @@ section {
       width: 100% !important;
       flex-direction: column;            
       .textos{
-        width: 90%;
-        position: static !important;
+        width: 90%;                
         
         z-index: 1;
         .menus{
